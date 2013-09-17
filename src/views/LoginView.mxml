@@ -29,8 +29,8 @@
 							   >
 				
 				<s:VGroup horizontalCenter="0" verticalCenter="0" gap="40">
-					<s:TextInput text="USERNAME" width="500" height="60"/>
-					<s:TextInput text="PASSWORD" width="500" height="60"/>
+					<s:TextInput text="USERNAME" width="500" height="60" contentBackgroundColor="white" />
+					<s:TextInput text="PASSWORD" width="500" height="60" contentBackgroundColor="white" />
 				</s:VGroup>
 				
 			</s:BorderContainer>
