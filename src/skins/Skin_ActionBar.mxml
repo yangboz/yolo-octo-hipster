@@ -30,23 +30,22 @@
 			 right="0"
 			 scaleMode="stretch"/>
 	
-	<s:Image source="@Embed('/assets/images/logo.png')"
-			 horizontalCenter="0"/>
+	<!--<s:Image source="@Embed('/assets/images/logo.png')"
+			 horizontalCenter="0"/>-->
 	
 	<s:Group id="navigationGroup"
-			 left="12"
-			 top="15"/>
+			 left="0"
+			 top="0"/>
 	
-	<s:Group id="titleGroup"
-			 left="10"
-			 top="68"/>
+	<s:Group id="titleGroup" horizontalCenter="0" verticalCenter="0"/>
 	
 	<s:Group id="actionGroup"
-			 right="12"
-			 top="15"/>
+			 right="0"
+			 top="0"/>
 	
-	<s:Label id="titleDisplay"
+	<!--<s:Label id="titleDisplay"
 			 horizontalCenter="0"
-			 top="8"/>
+			 verticalAlign="middle"
+	/>-->
 	
 </s:Skin>

@@ -40,4 +40,10 @@
 		<components:ImageButton skinClass="skins.Skin_LoginButton" label="LOGIN" click="loginBtn_clickHandler(event)"/>
 	</s:VGroup>
 	
+	<!-- Override the title to insert a Label control. -->
+	<s:titleContent>
+		<s:BorderContainer borderColor="black">
+			<s:Image source="@Embed('/assets/images/logo.png')"/>
+		</s:BorderContainer>
+	</s:titleContent>
 </s:View>
