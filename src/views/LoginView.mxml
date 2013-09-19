@@ -19,7 +19,7 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30">
+	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
 			
 		<s:VGroup horizontalCenter="0" verticalCenter="0" >
 			
@@ -29,21 +29,26 @@
 							   >
 				
 				<s:VGroup horizontalCenter="0" verticalCenter="0" gap="40">
-					<s:TextInput text="USERNAME" width="500" height="60" contentBackgroundColor="white" />
-					<s:TextInput text="PASSWORD" width="500" height="60" contentBackgroundColor="white" />
+					<s:TextInput text="USERNAME" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
+					<s:TextInput text="PASSWORD" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
 				</s:VGroup>
 				
 			</s:BorderContainer>
 			
 		</s:VGroup>
 		
-		<components:ImageButton skinClass="skins.Skin_LoginButton" label="LOGIN" click="loginBtn_clickHandler(event)"/>
+		<components:ImageButton skinClass="skins.Skin_LoginButton" label="LOGIN" click="loginBtn_clickHandler(event)"
+							    color="0x5E9F01"
+								/>
+		<s:Label text="MS DYNAMICS CRM DASHBOARD" color="0xFEFFFF"/>
+		<s:Label text="MOBILE CASES V1.0" color="0xFEFFFF"/>
+		
 	</s:VGroup>
 	
 	<!-- Override the title to insert a Label control. -->
 	<s:titleContent>
-		<s:BorderContainer borderColor="black">
+		<!--<s:BorderContainer borderColor="black" borderVisible="false">-->
 			<s:Image source="@Embed('/assets/images/logo.png')"/>
-		</s:BorderContainer>
+		<!--</s:BorderContainer>-->
 	</s:titleContent>
 </s:View>

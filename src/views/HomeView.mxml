@@ -12,7 +12,7 @@
 	
 	<!-- Override the title to insert a Label control. -->
 	<s:titleContent>
-		<s:Label text="DASH BOARD" color="black"/>
+		<s:Label text="DASH BOARD" color="0x030303"/>
 	</s:titleContent>
 	<!-- Override the action area to insert a Setting button. -->
 	<s:actionContent>
