@@ -1,51 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
-<project name="DynamicCRM"
-		 basedir="."
-		 default="main">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @ref:http://blog.johlero.eu/2011/09/11/compiling-a-mobile-flex-project-using-ant-and-launching-the-swf-using-the-air-debug-launcher/ -->
+<project name="DynamicCRM_flash" basedir="." default="compile">
 	<property name="FLEX_HOME"
-			  value="C:\Flex\sdks\flex_sdk_4.6.0.23201B"/>
-	<property name="TARGET_PLAYER"
-			  value="11.3.0"/>
-	<property name="APP_ROOT"
-			  value="."/>
-	<property name="swf-debug"
-			  value="false"/>
-	<property name="bin.dir"
-			  value="${basedir}/bin-debug/"/>
+				  value="C:\Flex\sdks\flex_sdk_4.6.0.23201B"/>
+		<property name="TARGET_PLAYER"
+				  value="11.3.0"/>
+		<property name="APP_ROOT"
+				  value="."/>
+		<property name="swf-debug"
+				  value="false"/>
+		<property name="bin.dir"
+				  value="${basedir}/bin-debug/"/>
+		<property name="src.dir"
+					  value="${basedir}/"/>
 
-	<tstamp>
-		<format property="BUILD_TIME"
-				pattern="MM/dd/yyyy HH:mm"
-				locale="en"/>
-	</tstamp>
-	<echo message="BUILD_TIME = ${BUILD_TIME}"/>
-	<property name="DEPLOY_DIR"
-			  value="release"/>
+		<tstamp>
+			<format property="BUILD_TIME"
+					pattern="MM/dd/yyyy HH:mm"
+					locale="en"/>
+		</tstamp>
+		<echo message="BUILD_TIME = ${BUILD_TIME}"/>
+		<property name="DEPLOY_DIR"
+				  value="release"/>
 
-	<taskdef resource="flexTasks.tasks"
-			 classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+		<taskdef resource="flexTasks.tasks"
+				 classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+				  	
+	<target name="compile">
+		<echo level="info">Target::compile</echo>
+		<mxmlc
+	debug="false"
+	file="${basedir}/Main.mxml"
+	output="${basedir}/Main.swf"
+	actionscript-file-encoding="UTF-8"
+	keep-generated-actionscript="false"
+	incremental="false"
+	show-binding-warnings="true"
+	show-unused-type-selector-warnings="false"
+	link-report="${APP_ROOT}/report.xml"
+	locale="en_US,pt_BR"
+	allow-source-path-overlap="true"
+	report-invalid-styles-as-warnings="true"
+	keep-all-type-selectors="true"
+	static-link-runtime-shared-libraries="true">
+			<!--static-link-runtime-shared-libraries="true">-->
+			<!-- RSL's result in performance issues: 
+        When set to true, all framework code is compiled in the application -->
 
-	<target name="main"
-			depends="compile_main-app">
-	</target>
+			<theme dir="${FLEX_HOME}/frameworks/themes">
+				<include name="Mobile/mobile.swc" />
+				<!-- See properties project - Flex Theme -->
+			</theme>
 
-	<target name="compile_main-app">
-		<mxmlc file="${basedir}/Main.mxml"
-			   output="${DEPLOY_DIR}/Main.swf"
-			   keep-generated-actionscript="false"
-			   maxmemory="512m"
-			   static-link-runtime-shared-libraries="true"
-			   locale="zh_CN,en_US,ko_KR"
-			   allow-source-path-overlap="true"
-			>
-			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
-			<source-path path-element="${basedir}"/>
+			<load-config filename="${FLEX_HOME}/frameworks/airmobile-config.xml"/>
+
+			<source-path path-element="${src.dir}"/>
 			<source-path path-element="../locale/{locale}"/>
-			<compiler.library-path dir="../libs"
-								   append="true">
-				<include name="*.swc"/>
+
+			<compiler.library-path dir="${FLEX_HOME}" append="true">
+				<include name="frameworks/libs"/>
+				<include name="frameworks/locale/en_US"/>
 			</compiler.library-path>
+
+			<!-- Next include all swc's you need to compile your project. -->
+			<compiler.library-path dir="..." append="true">
+				<include name="..."/>
+				<!-- Include more swc's if needed -->
+			</compiler.library-path>
+
+			<!-- Application default dimensions-->
+			<!--<default-size width="500" height="600"/>-->
+
 		</mxmlc>
 	</target>
-
+	
+	
+	<target name="compile_main-app">
+			<mxmlc file="${basedir}/Main.mxml"
+				   output="${basedir}/Main.swf"
+				   keep-generated-actionscript="false"
+				   maxmemory="512m"
+				   static-link-runtime-shared-libraries="true"
+				   locale="en_US,pt_BR"
+				   allow-source-path-overlap="true"
+				>
+				<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+				<source-path path-element="${basedir}"/>
+				<source-path path-element="../locale/{locale}"/>
+				<compiler.library-path dir="../libs"
+									   append="true">
+					<include name="*.swc"/>
+				</compiler.library-path>
+			</mxmlc>
+		</target>
 </project>

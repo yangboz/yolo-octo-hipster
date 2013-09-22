@@ -87,7 +87,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">QUICK RESOLUTION CASES VIEW</s:span>
+					<s:span fontWeight="bold">{resourceManager.getString('default', 'BTN_QUICK_RESOLUTION')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
@@ -133,7 +133,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">DASH BOARD</s:span>
+					<s:span fontWeight="bold">CRM DASHBOARD</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
