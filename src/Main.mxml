@@ -4,6 +4,7 @@
 							firstView="views.LoginView" 
 							applicationDPI="160"
 						    skinClass="skins.Skin_LoginView"
+						    creationComplete="application_creationCompleteHandler(event)"
 							>
 	<fx:Style>
 		@namespace s "library://ns.adobe.com/flex/spark";
@@ -15,13 +16,30 @@
 			fontWeight:normal;
 			color: #000000;
 		}
-		
 		s|ActionBar #titleGroup {
 			fontWeight:normal;
 			color: #FFFFFF;
 		}
+		/*
+		s|Application { 
+			locale: 'pt_BR';pt_BR,en_US
+		}
+		*/
 	</fx:Style>
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			protected function application_creationCompleteHandler(event:FlexEvent):void
+			{
+				resourceManager.localeChain = ["pt_BR"];
+			}
+		]]>
+	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
+	<fx:Metadata>
+		[ResourceBundle("default")] 
+	</fx:Metadata>
 </s:ViewNavigatorApplication>

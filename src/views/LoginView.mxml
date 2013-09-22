@@ -7,9 +7,12 @@
 	
 	<fx:Script>
 		<![CDATA[
+			import mx.resources.ResourceManager;
+			//
 			protected function loginBtn_clickHandler(event:MouseEvent):void
 			{
 				this.navigator.pushView(HomeView);
+				trace(ResourceManager.getInstance().localeChain);
 			}
 		]]>
 	</fx:Script>
@@ -28,8 +31,8 @@
 							   >
 				
 				<s:VGroup horizontalCenter="0" verticalCenter="0" gap="40">
-					<s:TextInput text="USERNAME" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
-					<s:TextInput text="PASSWORD" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
+					<s:TextInput text="{resourceManager.getString('default', 'TXT_USER_NAME')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
+					<s:TextInput text="{resourceManager.getString('default', 'TXT_PASSWORD')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E"/>
 				</s:VGroup>
 				
 			</s:BorderContainer>
