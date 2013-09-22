@@ -9,7 +9,6 @@
 		<![CDATA[
 			protected function loginBtn_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
 				this.navigator.pushView(HomeView);
 			}
 		]]>
@@ -40,8 +39,15 @@
 		<components:ImageButton skinClass="skins.Skin_LoginButton" label="LOGIN" click="loginBtn_clickHandler(event)"
 							    color="0x5E9F01"
 								/>
-		<s:Label text="MS DYNAMICS CRM DASHBOARD" color="0xFEFFFF"/>
-		<s:Label text="MOBILE CASES V1.0" color="0xFEFFFF"/>
+		
+		<s:RichText id="richTxt" color="0xFEFFFF"
+					horizontalCenter="0" verticalCenter="0">
+			<s:textFlow>
+				<s:TextFlow>
+					<s:span fontWeight="bold">MS DYNAMICS CRM DASHBOARD <s:br></s:br><s:tab></s:tab>MOBILE CASES V1.0</s:span>
+				</s:TextFlow>
+			</s:textFlow>
+		</s:RichText>
 		
 	</s:VGroup>
 	

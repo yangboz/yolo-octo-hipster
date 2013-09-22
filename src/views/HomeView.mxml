@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		xmlns:s="library://ns.adobe.com/flex/spark" title="" xmlns:components="views.components.*">
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		title="" backgroundAlpha="0"
+		xmlns:components="views.components.*">
 	<fx:Script>
 		<![CDATA[
+			import skins.Skin_LoginButton;
 			
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
+	
+	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
+		<components:ImageButton skinClass="skins.Skin_LoginButton" label="OPENED CASES DASHBOARD VIEW" 
+								color="0x5E9F01"
+								/>
+		<components:ImageButton skinClass="skins.Skin_LoginButton" label="QUICK RESOLUTION CASES VIEW" 
+								color="0x5E9F01"
+								/>
+		<components:ImageButton skinClass="skins.Skin_LoginButton" label="CRITICAL CASES VIEW" 
+								color="0x5E9F01"
+								/>
+		<components:ImageButton skinClass="skins.Skin_LoginButton" label="EMAIL/FAX PRODUCTIVITY" 
+								color="0x5E9F01"
+								/>
+	</s:VGroup>
 	
 	<!-- Override the title to insert a Label control. -->
 	<s:titleContent>
