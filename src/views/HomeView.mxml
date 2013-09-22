@@ -14,20 +14,17 @@
 			
 			protected function imagebutton_quick_resolution_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
-				
+				this.navigator.pushView(QuickResolutionCasesView);
 			}
 			
 			protected function imagebutton_critical_case_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
-				
+				this.navigator.pushView(CriticalCasesView);
 			}
 			
 			protected function imagebutton_email_fax_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
-				
+				this.navigator.pushView(EmailFaxProductivityView);
 			}
 			
 		]]>
