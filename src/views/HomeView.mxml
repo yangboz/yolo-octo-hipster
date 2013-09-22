@@ -34,20 +34,20 @@
 	</fx:Declarations>
 	
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
-		<components:ImageButton skinClass="skins.Skin_LoginButton" label="OPENED CASES DASHBOARD VIEW" 
-								color="0x5E9F01"
+		<components:ImageButton skinClass="skins.Skin_Button_OpenedCases" label="OPENED CASES DASHBOARD VIEW" 
+								color="0x39A9E8"
 							    click="imagebutton_opened_case_clickHandler(event)"
 								/>
-		<components:ImageButton skinClass="skins.Skin_LoginButton" label="QUICK RESOLUTION CASES VIEW" 
-								color="0x5E9F01"
+		<components:ImageButton skinClass="skins.Skin_Button_QuickResolution" label="QUICK RESOLUTION CASES VIEW" 
+								color="0x39A9E8"
 							    click="imagebutton_quick_resolution_clickHandler(event)"
 								/>
-		<components:ImageButton skinClass="skins.Skin_LoginButton" label="CRITICAL CASES VIEW" 
-								color="0x5E9F01"
+		<components:ImageButton skinClass="skins.Skin_Button_CriticalCase" label="CRITICAL CASES VIEW" 
+								color="0x39A9E8"
 							    click="imagebutton_critical_case_clickHandler(event)"
 								/>
-		<components:ImageButton skinClass="skins.Skin_LoginButton" label="EMAIL/FAX PRODUCTIVITY" 
-								color="0x5E9F01"
+		<components:ImageButton skinClass="skins.Skin_Button_EmailFax" label="EMAIL/FAX PRODUCTIVITY" 
+								color="0x39A9E8"
 							    click="imagebutton_email_fax_clickHandler(event)"
 								/>
 	</s:VGroup>
