@@ -25,7 +25,7 @@
 			
 		<s:VGroup horizontalCenter="0" verticalCenter="0" >
 			
-			<s:BorderContainer backgroundImage="@Embed('/assets/images/login-input.png')" 
+			<s:BorderContainer backgroundImage="@Embed('../assets/images/login-input.png')" 
 							   width="558" height="194"
 							   borderAlpha="0"
 							   >

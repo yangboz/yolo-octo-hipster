@@ -35,7 +35,7 @@
 	</target>
 	
 	<target name="-compile">
-		<mxmlc 
+		<!-- <mxmlc 
 			file="${SOURCE_DIR}/${app.file}" 
 			output="${BUILD_DIR}/${app.name}.swf" 
 			locale="${LOCALE}" 
@@ -48,7 +48,24 @@
 			maxmemory="512m"
 			static-link-runtime-shared-libraries="true"
 			allow-source-path-overlap="true"
-			>
+			> -->
+			<mxmlc
+		debug="false"
+		file="${basedir}/Main.mxml"
+		output="${RELEASE_DIR}/Main.swf"
+		actionscript-file-encoding="UTF-8"
+		keep-generated-actionscript="false"
+		incremental="false"
+		show-binding-warnings="true"
+		show-unused-type-selector-warnings="false"
+		link-report="${RELEASE_DIR}/report.xml"
+		locale="en_US,pt_BR"
+		allow-source-path-overlap="true"
+		report-invalid-styles-as-warnings="true"
+		keep-all-type-selectors="true"
+		static-link-runtime-shared-libraries="true">
+			
+			<load-config filename="${FLEX_HOME}/frameworks/airmobile-config.xml"/>
 			<source-path path-element="${basedir}"/>
 			<source-path path-element="../locale/{locale}"/>
 			<compiler.library-path dir="../libs"

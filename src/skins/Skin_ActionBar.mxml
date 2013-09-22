@@ -25,12 +25,12 @@
 	name=titleDisplay, type=spark.core.IDisplayText, required=false
 	-->
 	
-	<s:Image source="@Embed('/assets/images/top-bg.png')"
+	<s:Image source="@Embed('../assets/images/top-bg.png')"
 			 left="0"
 			 right="0"
 			 scaleMode="stretch"/>
 	
-	<!--<s:Image source="@Embed('/assets/images/logo.png')"
+	<!--<s:Image source="@Embed('../assets/images/logo.png')"
 			 horizontalCenter="0"/>-->
 	
 	<s:Group id="navigationGroup"

@@ -21,7 +21,7 @@
 		</tstamp>
 		<echo message="BUILD_TIME = ${BUILD_TIME}"/>
 		<property name="DEPLOY_DIR"
-				  value="release"/>
+				  value="../release"/>
 
 		<taskdef resource="flexTasks.tasks"
 				 classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
@@ -31,13 +31,13 @@
 		<mxmlc
 	debug="false"
 	file="${basedir}/Main.mxml"
-	output="${basedir}/Main.swf"
+	output="${DEPLOY_DIR}/Main.swf"
 	actionscript-file-encoding="UTF-8"
 	keep-generated-actionscript="false"
 	incremental="false"
 	show-binding-warnings="true"
 	show-unused-type-selector-warnings="false"
-	link-report="${APP_ROOT}/report.xml"
+	link-report="${DEPLOY_DIR}/report.xml"
 	locale="en_US,pt_BR"
 	allow-source-path-overlap="true"
 	report-invalid-styles-as-warnings="true"
@@ -51,8 +51,9 @@
 				<include name="Mobile/mobile.swc" />
 				<!-- See properties project - Flex Theme -->
 			</theme>
-
-			<load-config filename="${FLEX_HOME}/frameworks/airmobile-config.xml"/>
+			
+			<load-config filename="${FLEX_HOME}/frameworks/airmobile-config.xml"/> 
+			<!-- <load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>-->
 
 			<source-path path-element="${src.dir}"/>
 			<source-path path-element="../locale/{locale}"/>
@@ -60,6 +61,7 @@
 			<compiler.library-path dir="${FLEX_HOME}" append="true">
 				<include name="frameworks/libs"/>
 				<include name="frameworks/locale/en_US"/>
+				<include name="frameworks/locale/pt_BR"/>
 			</compiler.library-path>
 
 			<!-- Next include all swc's you need to compile your project. -->

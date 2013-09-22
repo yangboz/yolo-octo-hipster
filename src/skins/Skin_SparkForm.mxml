@@ -56,7 +56,7 @@ that has additional logic to align the columns of FormItems.
 	<!--- Defines the appearance of the Form class's background. -->
 	<s:Rect id="background" left="0" right="0" top="0" bottom="0">
 		<s:fill>
-			<s:BitmapFill id="bgFill" source="@Embed('assets/images/login-input.png')" fillMode="scale"/>
+			<s:BitmapFill id="bgFill" source="@Embed('../assets/images/login-input.png')" fillMode="scale"/>
 		</s:fill>
 	</s:Rect>
 	

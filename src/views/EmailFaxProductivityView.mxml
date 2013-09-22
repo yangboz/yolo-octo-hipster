@@ -115,7 +115,7 @@
 			</mx:ColumnChart>
 		</s:BorderContainer>
 		
-		<s:BorderContainer width="100%" backgroundImage="@Embed('assets/images/bottom-bg.PNG')" borderAlpha="0">
+		<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0">
 			<s:HGroup horizontalAlign="center" verticalAlign="middle">
 				<components:ImageButton skinClass="skins.Skin_MailButton" click="imagebutton_mail_clickHandler(event)"/>
 			</s:HGroup>
