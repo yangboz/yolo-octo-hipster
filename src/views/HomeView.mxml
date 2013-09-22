@@ -5,6 +5,9 @@
 		xmlns:components="views.components.*">
 	<fx:Script>
 		<![CDATA[
+			import mx.managers.PopUpManager;
+			
+			import views.components.PreCriticalCasesPopup;
 			
 			protected function imagebutton_opened_case_clickHandler(event:MouseEvent):void
 			{
@@ -18,7 +21,13 @@
 			
 			protected function imagebutton_critical_case_clickHandler(event:MouseEvent):void
 			{
-				this.navigator.pushView(CriticalCasesView);
+				var menuPopup:PreCriticalCasesPopup = new PreCriticalCasesPopup();
+				menuPopup.open(this, true);
+				PopUpManager.centerPopUp(menuPopup);
+				//				menuPopup.setStyle("modalTransparency",1);
+				//				menuPopup.setStyle("modalTransparencyBlur",3);
+				//				menuPopup.setStyle("modalTransparencyColor", '#ff0000');
+//				this.navigator.pushView(CriticalCasesView);
 			}
 			
 			protected function imagebutton_email_fax_clickHandler(event:MouseEvent):void
@@ -27,9 +36,6 @@
 			}
 		]]>
 	</fx:Script>
-	<fx:Declarations>
-		<!-- Place non-visual elements (e.g., services, value objects) here -->
-	</fx:Declarations>
 	
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
 		<components:ImageButton skinClass="skins.Skin_Button_OpenedCases" label="{resourceManager.getString('default', 'BTN_OPENED_CASES')}" 

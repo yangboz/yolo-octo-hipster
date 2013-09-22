@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						   xmlns:s="library://ns.adobe.com/flex/spark">
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			protected function radiobutton_changeHandler(label:String):void
+			{
+				this.close();
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:VGroup >
+		<s:RadioButton groupName="a"
+					   change="radiobutton_changeHandler('process')"
+					   label="Customer - Process" />
+		<s:RadioButton groupName="a"
+					   change="radiobutton_changeHandler('payments')"
+					   label="Customer - Payments" />
+		<s:RadioButton groupName="a"
+					   change="radiobutton_changeHandler('termination')"
+					   label="Customer - Termination" />
+		<s:RadioButton groupName="a"
+					   change="radiobutton_changeHandler('callcenter')"
+					   label="Customer - Call Center" />
+	</s:VGroup>
+</s:SkinnablePopUpContainer>

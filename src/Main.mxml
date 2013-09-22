@@ -25,6 +25,11 @@
 			locale: 'pt_BR';pt_BR,en_US
 		}
 		*/
+		global {
+			modal-transparency: .4;
+			modal-transparency-blur: 1;
+			modal-transparency-color: #7A7A7A;
+		}
 	</fx:Style>
 	<fx:Script>
 		<![CDATA[
