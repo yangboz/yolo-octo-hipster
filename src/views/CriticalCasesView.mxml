@@ -32,7 +32,6 @@
 		<!-- Define custom Strokes for the columns. -->
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
-	
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
@@ -44,15 +43,14 @@
 			</s:textFlow>
 		</s:RichText>
 		
-		<s:DropDownList width="100%" prompt="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}"> 
-			<mx:ArrayCollection>
-				<fx:String>Alabama</fx:String>
-				<fx:String>Alaska</fx:String>
-				<fx:String>Arizona</fx:String>
-				<fx:String>Arkansas</fx:String>
-				<fx:String>California</fx:String>
-			</mx:ArrayCollection>
-		</s:DropDownList>
+		<s:BorderContainer width="568" height="82" 
+						   backgroundImage="@Embed('../assets/images/dropdown-bg.png')"
+						   backgroundImageFillMode="scale"
+						   borderAlpha="0">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<s:Label text="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}" fontWeight="bold" color="0x1C7BB8"/>
+			</s:VGroup>
+		</s:BorderContainer>
 		
 		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart2.png')" borderAlpha="0" height="577">
 		</s:BorderContainer>

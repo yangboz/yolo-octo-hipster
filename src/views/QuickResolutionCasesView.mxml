@@ -11,7 +11,7 @@
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
-			
+			import skins.Skin_Button_DropDown;
 			import skins.Skin_MailButton;
 			protected function imagebutton_back_clickHandler(event:MouseEvent):void
 			{
@@ -33,7 +33,6 @@
 		<!-- Define custom Strokes for the columns. -->
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
-	
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
@@ -44,13 +43,15 @@
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
-		<!--<s:ComboBox id="modeList" selectedIndex="0" change="dateSpinner.displayMode=modeList.selectedItem.value">
-			<s:ArrayList>
-				<fx:Object value="date" label="Date"/>
-				<fx:Object value="time" label="Time"/>
-				<fx:Object value="dateAndTime" label="Date and Time"/>
-			</s:ArrayList>
-		</s:ComboBox>-->
+		
+		<s:BorderContainer width="568" height="82" 
+						   backgroundImage="@Embed('../assets/images/dropdown-bg.png')"
+						   backgroundImageFillMode="scale"
+						   borderAlpha="0">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<s:Label text="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}" fontWeight="bold" color="0x1C7BB8"/>
+			</s:VGroup>
+		</s:BorderContainer>
 		
 		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart3.png')" borderAlpha="0" height="577">
 		</s:BorderContainer>

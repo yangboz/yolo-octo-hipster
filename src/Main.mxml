@@ -2,7 +2,6 @@
 <s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
 							xmlns:s="library://ns.adobe.com/flex/spark" 
 							firstView="views.LoginView" 
-							applicationDPI="160"
 						    skinClass="skins.Skin_LoginView"
 						    creationComplete="application_creationCompleteHandler(event)"
 							>

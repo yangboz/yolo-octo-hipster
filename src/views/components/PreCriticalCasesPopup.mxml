@@ -22,7 +22,7 @@
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	<s:BorderContainer width="565" height="332" backgroundImage="@Embed('../../assets/images/popup-bg1.png')" borderAlpha="0">
-		<s:VGroup gap="80" paddingLeft="30" paddingTop="20" horizontalAlign="left" verticalAlign="middle">
+		<s:VGroup gap="70" paddingLeft="30" paddingTop="25" horizontalAlign="left" verticalAlign="middle">
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('process')"
