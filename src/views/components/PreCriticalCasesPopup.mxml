@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
-						   xmlns:s="library://ns.adobe.com/flex/spark">
+						   xmlns:s="library://ns.adobe.com/flex/spark"
+						   backgroundAlpha="0"
+						   >
 	<s:layout>
 		<s:VerticalLayout/>
 	</s:layout>
 	
 	<fx:Script>
 		<![CDATA[
+			import views.CriticalCasesView;
 			protected function radiobutton_changeHandler(label:String):void
 			{
 				this.close();
+				(this.parentApplication as Main).navigator.pushView(CriticalCasesView);
 			}
 		]]>
 	</fx:Script>
@@ -17,18 +21,20 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:VGroup >
-		<s:RadioButton groupName="a"
-					   change="radiobutton_changeHandler('process')"
-					   label="Customer - Process" />
-		<s:RadioButton groupName="a"
-					   change="radiobutton_changeHandler('payments')"
-					   label="Customer - Payments" />
-		<s:RadioButton groupName="a"
-					   change="radiobutton_changeHandler('termination')"
-					   label="Customer - Termination" />
-		<s:RadioButton groupName="a"
-					   change="radiobutton_changeHandler('callcenter')"
-					   label="Customer - Call Center" />
-	</s:VGroup>
+	<s:BorderContainer width="565" height="332" backgroundImage="@Embed('../../assets/images/popup-bg1.png')" borderAlpha="0">
+		<s:VGroup gap="80" paddingLeft="30" paddingTop="20" horizontalAlign="left" verticalAlign="middle">
+			<s:RadioButton groupName="a"
+						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
+						   change="radiobutton_changeHandler('process')"
+						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_AREA')}" />
+			<s:RadioButton groupName="a"
+						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
+						   change="radiobutton_changeHandler('payments')"
+						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_DATE')}" />
+			<s:RadioButton groupName="a"
+						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
+						   change="radiobutton_changeHandler('termination')"
+						   label="{resourceManager.getString('default', 'RBG_LABEL_TASKS_BY_DATE')}" />
+		</s:VGroup>
+	</s:BorderContainer>
 </s:SkinnablePopUpContainer>

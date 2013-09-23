@@ -5,14 +5,13 @@
 		backgroundAlpha="0"
 		title="" 
 		xmlns:components="views.components.*"
-	    creationComplete="view_creationCompleteHandler(event)"
 		>
 	<s:layout>
 		<s:HorizontalLayout/>
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
-			import mx.events.FlexEvent;
+			import skins.Skin_MailButton;
 			protected function imagebutton_back_clickHandler(event:MouseEvent):void
 			{
 				this.navigator.backKeyUpHandler();				
@@ -22,53 +21,6 @@
 			}
 			
 			//About chart 
-			protected var lastX:Number = 0;
-			[Bindable] protected var viewportMax:Number = 10;
-			
-			protected function view_creationCompleteHandler(event:FlexEvent):void
-			{
-				// Simulate values
-				var results:Array = [];
-				for (var i:int=0; i<50; i++)
-				{
-					results[i] = Math.random() * 100;
-				}
-				chart.dataProvider = results;
-			}
-			
-			protected function mouseDownHandler(event:MouseEvent):void
-			{
-				lastX = event.stageX;
-				systemManager.addEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
-				systemManager.addEventListener(MouseEvent.MOUSE_UP, mouseUpHandler);
-			}
-			
-			protected function mouseMoveHandler(event:MouseEvent):void
-			{
-				var delta:Number = (lastX - event.stageX) / chart.width * viewportMax;
-				if (hAxis.minimum + delta < 0)
-				{
-					hAxis.minimum = 0;
-					hAxis.maximum = viewportMax;
-				}
-				else if (hAxis.maximum + delta  > chart.dataProvider.length - 1)
-				{
-					hAxis.maximum = chart.dataProvider.length - 1;
-					hAxis.minimum = hAxis.maximum - viewportMax;
-				}
-				else
-				{
-					hAxis.minimum += delta;
-					hAxis.maximum += delta;
-				}
-				lastX = event.stageX;
-			}
-			
-			protected function mouseUpHandler(event:MouseEvent):void
-			{
-				systemManager.removeEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
-				systemManager.removeEventListener(MouseEvent.MOUSE_MOVE, mouseUpHandler);
-			}
 			
 		]]>
 	</fx:Script>
@@ -81,7 +33,7 @@
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
 	
-	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="left" verticalAlign="middle" width="100%" height="100%">
+	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
 					horizontalCenter="0" verticalCenter="0">
@@ -91,34 +43,24 @@
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
-		<!--<s:ComboBox id="modeList" selectedIndex="0" change="dateSpinner.displayMode=modeList.selectedItem.value">
-			<s:ArrayList>
-				<fx:Object value="date" label="Date"/>
-				<fx:Object value="time" label="Time"/>
-				<fx:Object value="dateAndTime" label="Date and Time"/>
-			</s:ArrayList>
-		</s:ComboBox>-->
 		
-		<s:DateSpinner id="dateSpinner" displayMode="dateAndTime"/>
+		<s:DropDownList width="100%" prompt="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}"> 
+			<mx:ArrayCollection>
+				<fx:String>Alabama</fx:String>
+				<fx:String>Alaska</fx:String>
+				<fx:String>Arizona</fx:String>
+				<fx:String>Arkansas</fx:String>
+				<fx:String>California</fx:String>
+			</mx:ArrayCollection>
+		</s:DropDownList>
 		
-		<s:BorderContainer width="100%" >
-			<mx:ColumnChart id="chart" top="10" left="10" right="10" bottom="10"
-							mouseDown="mouseDownHandler(event)">
-				<mx:series>
-					<mx:ColumnSeries fill="{sc_00}" stroke="{scs_00}"/>
-				</mx:series>
-				
-				<mx:horizontalAxis>
-					<mx:LinearAxis id="hAxis" minimum="0" maximum="{viewportMax}"/>
-				</mx:horizontalAxis>
-				
-			</mx:ColumnChart>
+		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart2.png')" borderAlpha="0" height="577">
 		</s:BorderContainer>
 		
 		<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0">
-			<s:HGroup horizontalAlign="center" verticalAlign="middle">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
 				<components:ImageButton skinClass="skins.Skin_MailButton" click="imagebutton_mail_clickHandler(event)"/>
-			</s:HGroup>
+			</s:VGroup>
 		</s:BorderContainer>
 	
 	</s:VGroup>
