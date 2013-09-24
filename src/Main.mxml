@@ -46,4 +46,5 @@
 	<fx:Metadata>
 		[ResourceBundle("default")] 
 	</fx:Metadata>
+	
 </s:ViewNavigatorApplication>

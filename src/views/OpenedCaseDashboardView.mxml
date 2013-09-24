@@ -61,6 +61,7 @@
 		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart2.png')" borderAlpha="0" height="577">
 		</s:BorderContainer>
 		
+		<s:Spacer width="100%" height="100%"/>
 		
 		<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0">
 			<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
