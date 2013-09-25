@@ -7,7 +7,7 @@
 		xmlns:components="views.components.*"
 		>
 	<s:layout>
-		<s:HorizontalLayout/>
+		<s:VerticalLayout/>
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
@@ -33,7 +33,8 @@
 		<!-- Define custom Strokes for the columns. -->
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
-	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
+	
+	<s:VGroup paddingLeft="10" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
 					horizontalCenter="0" verticalCenter="0">
@@ -44,40 +45,32 @@
 			</s:textFlow>
 		</s:RichText>
 		
-		<s:HGroup horizontalAlign="left" verticalAlign="middle">
-			<s:BorderContainer width="268" height="82" 
-							   backgroundImage="@Embed('../assets/images/dropdown-bg0.png')"
-							   backgroundImageFillMode="scale"
-							   borderAlpha="0">
-				<s:VGroup paddingLeft="10" verticalCenter="0" horizontalAlign="left" verticalAlign="middle" >
-					<s:Label text="SELECIONE O MÊS" fontWeight="bold" color="0x1C7BB8" fontSize="20"/>
-				</s:VGroup>
-			</s:BorderContainer>
-			
-			<s:Spacer width="20" height="100%"/>
-			
-			<s:BorderContainer width="268" height="82" 
-							   backgroundImage="@Embed('../assets/images/dropdown-bg0.png')"
-							   backgroundImageFillMode="scale"
-							   borderAlpha="0">
-				<s:VGroup paddingLeft="10" verticalCenter="0" horizontalAlign="left" verticalAlign="middle" >
-					<s:Label text="SELECIONE O ANO" fontWeight="bold" color="0x1C7BB8" fontSize="20"/>
-				</s:VGroup>
-			</s:BorderContainer>
-		</s:HGroup>
-		
-		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart3.png')" borderAlpha="0" height="577">
+		<s:BorderContainer width="568" height="82" 
+						   backgroundImage="@Embed('../assets/images/dropdown-bg.png')"
+						   backgroundImageFillMode="scale"
+						   borderAlpha="0">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<s:Label text="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}" fontWeight="bold" color="0x1C7BB8"/>
+			</s:VGroup>
 		</s:BorderContainer>
 		
-		<s:Spacer width="100%" height="100%"/>
+		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart2.png')" borderAlpha="0" height="577">
+		</s:BorderContainer>
 		
-		<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0">
-			 <s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
-				 <components:ImageButton skinClass="skins.Skin_MailButton" click="imagebutton_mail_clickHandler(event)"/>
-			 </s:VGroup>
-		 </s:BorderContainer>
-	
 	</s:VGroup>
+	
+	<s:Spacer width="100%" height="100%"/>
+	
+	<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0">
+		<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
+			<components:ImageButton skinClass="skins.Skin_MailButton" click="imagebutton_mail_clickHandler(event)"/>
+		</s:VGroup>
+	</s:BorderContainer>
+	
+	<s:TabbedViewNavigator id="tb_hastaUp" width="100%" height="100%" >
+		<s:ViewNavigator label="view1" width="100%" height="100%"/>
+	</s:TabbedViewNavigator>
+	
 	<!-- Override the navigation area to insert a BACK button. -->
 	<s:navigationContent>
 		<components:ImageButton skinClass="skins.Skin_BackButton" label="BACK" click="imagebutton_back_clickHandler(event)"/>

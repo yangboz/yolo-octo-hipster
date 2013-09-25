@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						   xmlns:s="library://ns.adobe.com/flex/spark"
+						   backgroundAlpha="0"
+						   >
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			import views.critical_cases.CriticalCasesDrillDownView;
+			
+			protected function radiobutton_changeHandler(className:String):void
+			{
+				this.close();
+				//
+				(this.parentApplication as Main).navigator.pushView(CriticalCasesDrillDownView);
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:BorderContainer width="565" height="170" backgroundImage="@Embed('../../assets/images/popup-bg2.png')" borderAlpha="0">
+		<s:VGroup gap="30" paddingLeft="30" paddingTop="25" horizontalAlign="left" verticalAlign="middle">
+			<s:RadioButton groupName="a"
+						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
+						   change="radiobutton_changeHandler('CriticalCases01View')"
+						   fontSize="22"
+						   label="Data prevista de conclusão da central" />
+			<s:RadioButton groupName="a"
+						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
+						   change="radiobutton_changeHandler('CriticalCases02View')"
+						   fontSize="22"
+						   label="Área Atual" />
+		</s:VGroup>
+	</s:BorderContainer>
+</s:SkinnablePopUpContainer>

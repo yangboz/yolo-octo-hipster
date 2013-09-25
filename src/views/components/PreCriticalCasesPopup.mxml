@@ -9,11 +9,31 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import views.CriticalCasesView;
-			protected function radiobutton_changeHandler(label:String):void
+			import flash.utils.getDefinitionByName;
+			
+			import views.critical_cases.CriticalCases01View;
+			import views.critical_cases.CriticalCases02View;
+			import views.critical_cases.CriticalCases03View;
+			
+			
+			protected function radiobutton_changeHandler(className:String):void
 			{
 				this.close();
-				(this.parentApplication as Main).navigator.pushView(CriticalCasesView);
+				// Convert class name to Class object.
+				switch(className)
+				{
+					case "01":
+						(this.parentApplication as Main).navigator.pushView(CriticalCases01View);
+						break;
+					case "02":
+						(this.parentApplication as Main).navigator.pushView(CriticalCases02View);
+						break;
+					case "03":
+						(this.parentApplication as Main).navigator.pushView(CriticalCases03View);
+						break;
+					default:
+						break;
+				}
 			}
 		]]>
 	</fx:Script>
@@ -25,17 +45,17 @@
 		<s:VGroup gap="60" paddingLeft="30" paddingTop="25" horizontalAlign="left" verticalAlign="middle">
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
-						   change="radiobutton_changeHandler('process')"
+						   change="radiobutton_changeHandler('01')"
 						   fontSize="22"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_AREA')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
-						   change="radiobutton_changeHandler('payments')"
+						   change="radiobutton_changeHandler('02')"
 						   fontSize="18"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_DATE')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
-						   change="radiobutton_changeHandler('termination')"
+						   change="radiobutton_changeHandler('03')"
 						   fontSize="18"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_TASKS_BY_DATE')}" />
 		</s:VGroup>
