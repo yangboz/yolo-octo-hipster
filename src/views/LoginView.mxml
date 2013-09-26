@@ -31,8 +31,8 @@
 							   >
 				
 				<s:VGroup horizontalCenter="0" verticalCenter="0" gap="40">
-					<s:TextInput text="{resourceManager.getString('default', 'TXT_USER_NAME')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E" borderVisible="false"/>
-					<s:TextInput text="{resourceManager.getString('default', 'TXT_PASSWORD')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E" borderVisible="false"/>
+					<s:TextInput prompt="{resourceManager.getString('default', 'TXT_USER_NAME')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E" borderVisible="false"/>
+					<s:TextInput prompt="{resourceManager.getString('default', 'TXT_PASSWORD')}" width="500" height="60" contentBackgroundColor="white" color="0x8E8E8E" borderVisible="false"/>
 				</s:VGroup>
 				
 			</s:BorderContainer>
