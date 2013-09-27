@@ -57,6 +57,7 @@
 		]]>
 	</fx:Script>
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
+		<s:Spacer width="100%" height="100%"/>
 		<components:ImageButton skinClass="skins.Skin_Button_OpenedCases" label="{resourceManager.getString('default', 'BTN_OPENED_CASES')}" 
 								color="0x39A9E8"
 							    fontSize="16"

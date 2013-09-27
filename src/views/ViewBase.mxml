@@ -6,7 +6,7 @@
 		backgroundAlpha="0"
 		>
 	<s:layout>
-		<s:VerticalLayout horizontalAlign="center" verticalAlign="top"/>
+		<s:VerticalLayout paddingTop="10" horizontalAlign="center" verticalAlign="top"/>
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
@@ -29,9 +29,9 @@
 		]]>
 	</fx:Script>
 	
-	<s:TabbedViewNavigator width="100%" height="100%" skinClass="skins.Skin_TabbedViewNavigator">
-		<s:ViewNavigator label="view1" width="100%" height="100%"/>
-	</s:TabbedViewNavigator>
+	<!--<s:TabbedViewNavigator width="100%" height="94" skinClass="skins.Skin_TabbedViewNavigator">
+		<s:ViewNavigator icon="@Embed('../assets/images/mail.png')"/>
+	</s:TabbedViewNavigator>-->
 	
 	<!-- Override the navigation area to insert a BACK button. -->
 	<s:navigationContent>
@@ -54,4 +54,5 @@
 	<s:actionContent>
 		<components:ImageButton skinClass="skins.Skin_SettingButton" label="" click="settingButton_clickedHandler(event)"/>
 	</s:actionContent>
+	
 </s:View>

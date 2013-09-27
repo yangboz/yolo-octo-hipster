@@ -14,6 +14,8 @@
 			import mx.events.FlexEvent;
 			import mx.managers.PopUpManager;
 			
+			import skins.Skin_MailButton;
+			
 			import views.components.PreCriticalCases01Popup;
 			
 			protected function imagebutton_mail_clickHandler(event:MouseEvent):void
@@ -80,6 +82,11 @@
 		
 		<s:Spacer width="100%" height="100%"/>
 		
+		<s:BorderContainer width="100%" backgroundImage="@Embed('../../assets/images/bottom-bg.PNG')" borderAlpha="0" height="94">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<components:ImageButton skinClass="skins.Skin_MailButton" />
+			</s:VGroup>
+		</s:BorderContainer>
+		
 	</s:VGroup>
-	
 </views:ViewBase>

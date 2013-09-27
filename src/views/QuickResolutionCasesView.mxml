@@ -10,6 +10,7 @@
 		>
 	<fx:Script>
 		<![CDATA[
+			import skins.Skin_MailButton;
 			//About chart 
 			
 		]]>
@@ -22,8 +23,7 @@
 		<!-- Define custom Strokes for the columns. -->
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
-	
-	<s:VGroup paddingLeft="10" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="top" width="100%" height="100%">
+	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="top" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
 					horizontalCenter="0" verticalCenter="0">
@@ -59,6 +59,13 @@
 		<s:BorderContainer width="568" backgroundImage="@Embed('../assets/images/chart-quick.png')" borderAlpha="0" height="577">
 		</s:BorderContainer>
 		
+		<s:Spacer width="100%" height="100%"/>
+		
+		<s:BorderContainer width="100%" backgroundImage="@Embed('../assets/images/bottom-bg.PNG')" borderAlpha="0" height="94">
+			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<components:ImageButton skinClass="skins.Skin_MailButton" />
+			</s:VGroup>
+		</s:BorderContainer>
+		
 	</s:VGroup>
-	
 </views:ViewBase>
