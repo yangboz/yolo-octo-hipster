@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <views:ViewBase 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		xmlns:s="library://ns.adobe.com/flex/spark" 
-		xmlns:mx="library://ns.adobe.com/flex/mx"
-		backgroundAlpha="0"
-		title="" 
-		xmlns:components="views.components.*"
-		xmlns:views="views.*"
-		>
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	backgroundAlpha="0"
+	title="" 
+	xmlns:components="views.components.*"
+	xmlns:views="views.*"
+	>
 	<fx:Script>
 		<![CDATA[
-			import skins.Skin_MailButton;
+			import mx.managers.PopUpManager;
 			
-			protected function imagebutton_mail_clickHandler(event:MouseEvent):void
+			import views.components.PreCriticalCases01Popup;
+			
+			protected function bordercontainer_level01_clickHandler(event:MouseEvent):void
 			{
+				var menuPopup:PreCriticalCases01Popup = new PreCriticalCases01Popup();
+				menuPopup.open(this, true);
+				PopUpManager.centerPopUp(menuPopup);
 			}
-			
 			//About chart 
 			
 		]]>
@@ -48,7 +52,9 @@
 			</s:VGroup>
 		</s:BorderContainer>
 		
-		<s:BorderContainer width="568" backgroundImage="@Embed('../../assets/images/chart-critial1.png')" borderAlpha="0" height="577">
+		<s:BorderContainer width="568" backgroundImage="@Embed('../../assets/images/chart-critial2.png')" borderAlpha="0" height="577"
+						   buttonMode="true"
+						   click="bordercontainer_level01_clickHandler(event)">
 		</s:BorderContainer>
 		
 		<s:Spacer width="100%" height="100%"/>

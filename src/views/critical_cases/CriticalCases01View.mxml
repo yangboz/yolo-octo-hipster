@@ -14,8 +14,6 @@
 			import mx.events.FlexEvent;
 			import mx.managers.PopUpManager;
 			
-			import skins.Skin_MailButton;
-			
 			import views.components.PreCriticalCases01Popup;
 			
 			protected function imagebutton_mail_clickHandler(event:MouseEvent):void

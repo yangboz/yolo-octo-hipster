@@ -23,7 +23,7 @@
 		<mx:SolidColorStroke id="scs_00" color="0x6CCDF1" weight="1"/>
 	</fx:Declarations>
 	
-	<s:VGroup paddingLeft="10" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
+	<s:VGroup paddingLeft="10" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="top" width="100%" height="100%">
 		
 		<s:RichText id="richTxt" color="0xFEFFFF"
 					horizontalCenter="0" verticalCenter="0">
@@ -39,7 +39,7 @@
 							   backgroundImage="@Embed('../assets/images/dropdown-bg0.png')"
 							   backgroundImageFillMode="scale"
 							   borderAlpha="0">
-				<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<s:VGroup paddingLeft="20" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
 					<s:Label text="{resourceManager.getString('default', 'LBL_ENTER_MONTH')}" fontWeight="bold" color="0x1C7BB8" fontSize="20"/>
 				</s:VGroup>
 			</s:BorderContainer>
@@ -50,7 +50,7 @@
 							   backgroundImage="@Embed('../assets/images/dropdown-bg0.png')"
 							   backgroundImageFillMode="scale"
 							   borderAlpha="0">
-				<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
+				<s:VGroup paddingLeft="10" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
 					<s:Label text="{resourceManager.getString('default', 'LBL_ENTER_YEAR')}" fontWeight="bold" color="0x1C7BB8" fontSize="20"/>
 				</s:VGroup>
 			</s:BorderContainer>
