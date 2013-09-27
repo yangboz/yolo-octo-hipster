@@ -29,12 +29,12 @@
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('CriticalCases01View')"
 						   fontSize="22"
-						   label="Data prevista de conclusão da central" />
+						   label="{resourceManager.getString('default', 'LBL_CRITICAL_DRILL_DOWN_POPUP_OPT_01')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('CriticalCases02View')"
 						   fontSize="22"
-						   label="Área Atual" />
+						   label="{resourceManager.getString('default', 'LBL_CRITICAL_DRILL_DOWN_POPUP_OPT_02')}" />
 		</s:VGroup>
 	</s:BorderContainer>
 </s:SkinnablePopUpContainer>

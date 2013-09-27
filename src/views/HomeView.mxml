@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+<views:ViewBase
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		xmlns:s="library://ns.adobe.com/flex/spark" 
 		title="" backgroundAlpha="0"
-		xmlns:components="views.components.*">
+	    creationComplete="withPopUpView_creationCompleteHandler(event)"
+		xmlns:components="views.components.*"
+		xmlns:views="views.*"
+		>
 	<fx:Script>
 		<![CDATA[
+			import mx.events.FlexEvent;
 			import mx.managers.PopUpManager;
 			
 			import views.components.PreCriticalCasesPopup;
@@ -34,6 +39,21 @@
 			{
 				this.navigator.pushView(EmailFaxProductivityView);
 			}
+			//@see:http://dlgsoftware.com/AIRAndroidBackKey.php
+			protected function withPopUpView_creationCompleteHandler(event:FlexEvent):void
+			{
+				systemManager.stage.addEventListener(KeyboardEvent.KEY_DOWN, stageKeyDownHandler, false, 500, true);
+			}
+			// Prevent app close when there is no view to pop to and Back key pressed in popup
+			protected function stageKeyDownHandler(event:KeyboardEvent):void
+			{
+				var key:uint = event.keyCode;
+				if (key == Keyboard.BACK && !systemManager.numModalWindows==0)
+				{
+					event.preventDefault();
+				}
+			}
+
 		]]>
 	</fx:Script>
 	<s:VGroup horizontalCenter="0" verticalCenter="0" gap="30" horizontalAlign="center" verticalAlign="middle">
@@ -58,20 +78,5 @@
 							    click="imagebutton_email_fax_clickHandler(event)"
 								/>
 	</s:VGroup>
-	<!-- Override the title to insert a Label control. -->
-	<s:titleContent>
-		<s:RichText color="0x030303"
-					horizontalCenter="0" verticalCenter="0">
-			<s:textFlow>
-				<s:TextFlow>
-					<s:span fontWeight="bold">CRM DASHBOARD</s:span>
-				</s:TextFlow>
-			</s:textFlow>
-		</s:RichText>
-	</s:titleContent>
-	<!-- Override the action area to insert a Setting button. -->
-	<s:actionContent>
-		<components:ImageButton skinClass="skins.Skin_SettingButton" label="LOGIN" />
-	</s:actionContent>  
 	
-</s:View>
+</views:ViewBase>

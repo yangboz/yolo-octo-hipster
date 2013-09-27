@@ -9,8 +9,6 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import flash.utils.getDefinitionByName;
-			
 			import views.critical_cases.CriticalCases01View;
 			import views.critical_cases.CriticalCases02View;
 			import views.critical_cases.CriticalCases03View;
@@ -51,7 +49,7 @@
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('02')"
-						   fontSize="18"
+						   fontSize="17"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_DATE')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"

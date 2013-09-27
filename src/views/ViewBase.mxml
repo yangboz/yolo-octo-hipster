@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+<s:View 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		xmlns:s="library://ns.adobe.com/flex/spark" 
-		xmlns:mx="library://ns.adobe.com/flex/mx"
-		backgroundAlpha="0"
-		title="" 
 		xmlns:components="views.components.*"
+		backgroundAlpha="0"
 		>
 	<s:layout>
-		<s:HorizontalLayout/>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="top"/>
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
+			import views.components.LocaleChoicePopup;
+			import mx.managers.PopUpManager;
+			
+			protected function imagebutton_back_clickHandler(event:MouseEvent):void
+			{
+				this.navigator.backKeyUpHandler();				
+			}
 			
 			protected function settingButton_clickedHandler(event:MouseEvent):void
 			{
-				
+				var menuPopup:LocaleChoicePopup = new LocaleChoicePopup();
+				menuPopup.open(this, true);
+				PopUpManager.centerPopUp(menuPopup);
 			}
 			//About chart 
 			
 		]]>
 	</fx:Script>
+	
+	<s:TabbedViewNavigator width="100%" height="100%" skinClass="skins.Skin_TabbedViewNavigator">
+		<s:ViewNavigator label="view1" width="100%" height="100%"/>
+	</s:TabbedViewNavigator>
 	
 	<!-- Override the navigation area to insert a BACK button. -->
 	<s:navigationContent>
@@ -42,5 +54,4 @@
 	<s:actionContent>
 		<components:ImageButton skinClass="skins.Skin_SettingButton" label="" click="settingButton_clickedHandler(event)"/>
 	</s:actionContent>
-	
 </s:View>
