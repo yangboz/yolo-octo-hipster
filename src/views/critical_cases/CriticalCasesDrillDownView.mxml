@@ -35,7 +35,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">{resourceManager.getString('default', 'BTN_CRITICAL_CASES')}</s:span>
+					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_BACK_OFFICE')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
@@ -44,21 +44,12 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">> DRILL DOWN</s:span>
+					<s:span fontWeight="bold">> {resourceManager.getString('default', 'LBL_DRILL_DOWN')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
 		
-		<s:BorderContainer width="568" height="82" 
-						   backgroundImage="@Embed('../../assets/images/dropdown-bg.png')"
-						   backgroundImageFillMode="scale"
-						   borderAlpha="0">
-			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
-				<s:Label text="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}" fontWeight="bold" color="0x1C7BB8"/>
-			</s:VGroup>
-		</s:BorderContainer>
-		
-		<s:BorderContainer width="568" backgroundImage="@Embed('../../assets/images/chart4.png')" borderAlpha="0" height="577">
+		<s:BorderContainer width="568" backgroundImage="{resourceManager.getClass('default','IMG_CRITICAL_DRILL_DOWN')}" borderAlpha="0" height="577">
 		</s:BorderContainer>
 		
 		<s:Spacer width="100%" height="100%"/>

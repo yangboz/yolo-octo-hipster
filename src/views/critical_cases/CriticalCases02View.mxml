@@ -40,7 +40,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">{resourceManager.getString('default', 'BTN_CRITICAL_CASES')}</s:span>
+					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_BACK_OFFICE')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
@@ -54,7 +54,7 @@
 			</s:VGroup>
 		</s:BorderContainer>
 		
-		<s:BorderContainer width="568" backgroundImage="@Embed('../../assets/images/chart-critial2.png')" borderAlpha="0" height="577"
+		<s:BorderContainer width="568" backgroundImage="{resourceManager.getClass('default','IMG_CRITICAL_CHART_02')}" borderAlpha="0" height="577"
 						   buttonMode="true"
 						   click="bordercontainer_level01_clickHandler(event)">
 		</s:BorderContainer>

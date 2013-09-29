@@ -40,16 +40,16 @@
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	<s:BorderContainer width="565" height="332" backgroundImage="@Embed('../../assets/images/popup-bg1.png')" borderAlpha="0">
-		<s:VGroup gap="60" paddingLeft="30" paddingTop="25" horizontalAlign="left" verticalAlign="middle">
+		<s:VGroup gap="60" paddingLeft="20" paddingTop="25" horizontalAlign="left" verticalAlign="middle">
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('01')"
-						   fontSize="22"
+						   fontSize="18"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_AREA')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"
 						   change="radiobutton_changeHandler('02')"
-						   fontSize="17"
+						   fontSize="18"
 						   label="{resourceManager.getString('default', 'RBG_LABEL_CASES_BY_DATE')}" />
 			<s:RadioButton groupName="a"
 						   skinClass="skins.Skin_RadioButton_PreCriticalCase"

@@ -17,7 +17,7 @@
 				//
 				this.close();
 				//
-				(this.parentApplication as Main).navigator.backKeyUpHandler();				
+//				(this.parentApplication as Main).navigator.backKeyUpHandler();				
 			}
 		]]>
 	</fx:Script>
