@@ -35,7 +35,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_BACK_OFFICE')}</s:span>
+					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_TASKS_BACK_OFFICE')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>

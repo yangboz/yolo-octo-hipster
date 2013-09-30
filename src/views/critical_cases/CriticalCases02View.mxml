@@ -40,19 +40,10 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_BACK_OFFICE')}</s:span>
+					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_TASKS_BACK_OFFICE')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
-		
-		<s:BorderContainer width="568" height="82" 
-						   backgroundImage="@Embed('../../assets/images/dropdown-bg.png')"
-						   backgroundImageFillMode="scale"
-						   borderAlpha="0">
-			<s:VGroup horizontalCenter="0" verticalCenter="0" horizontalAlign="center" verticalAlign="middle" >
-				<s:Label text="{resourceManager.getString('default', 'PROMPT_SELECT_DATE')}" fontWeight="bold" color="0x1C7BB8"/>
-			</s:VGroup>
-		</s:BorderContainer>
 		
 		<s:BorderContainer width="568" backgroundImage="{resourceManager.getClass('default','IMG_CRITICAL_CHART_02')}" borderAlpha="0" height="577"
 						   buttonMode="true"
