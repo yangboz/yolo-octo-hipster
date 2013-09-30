@@ -10,12 +10,12 @@
 	<fx:Script>
 		<![CDATA[
 			import views.critical_cases.CriticalCasesDrillDownView;
-			
+			public var drillDownLabel:String;
 			protected function radiobutton_changeHandler(className:String):void
 			{
 				this.close();
 				//
-				(this.parentApplication as Main).navigator.pushView(CriticalCasesDrillDownView);
+				(this.parentApplication as Main).navigator.pushView(CriticalCasesDrillDownView,drillDownLabel);
 			}
 		]]>
 	</fx:Script>

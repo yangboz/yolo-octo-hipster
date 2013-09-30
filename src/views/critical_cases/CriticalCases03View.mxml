@@ -20,6 +20,7 @@
 			{
 				var menuPopup:PreCriticalCases01Popup = new PreCriticalCases01Popup();
 				menuPopup.open(this, true);
+				menuPopup.drillDownLabel = resourceManager.getString('default', 'LBL_CRITICAL_TASKS_BACK_OFFICE');
 				PopUpManager.centerPopUp(menuPopup);
 			}
 			//About chart 

@@ -7,9 +7,12 @@
 		title="" 
 		xmlns:components="views.components.*"
 		xmlns:views="views.*"
+	    viewActivate="viewbase_viewActivateHandler(event)"
 		>
 	<fx:Script>
 		<![CDATA[
+			import spark.events.ViewNavigatorEvent;
+			
 			import skins.Skin_MailButton;
 			
 			protected function imagebutton_mail_clickHandler(event:MouseEvent):void
@@ -17,6 +20,14 @@
 			}
 			
 			//About chart 
+			
+			protected function viewbase_viewActivateHandler(event:ViewNavigatorEvent):void
+			{
+				//Receiving Data(label)
+				if (data != null) {
+					drillDownLabel.text = String(data);
+				}
+			}
 			
 		]]>
 	</fx:Script>
@@ -35,7 +46,7 @@
 					horizontalCenter="0" verticalCenter="0">
 			<s:textFlow>
 				<s:TextFlow>
-					<s:span fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_TASKS_BACK_OFFICE')}</s:span>
+					<s:span id="drillDownLabel" fontWeight="bold">{resourceManager.getString('default', 'LBL_CRITICAL_TASKS_BACK_OFFICE')}</s:span>
 				</s:TextFlow>
 			</s:textFlow>
 		</s:RichText>
